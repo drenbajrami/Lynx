@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lynx</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>      
+      
+    <link rel="stylesheet" href="./style.css">
+    <!--
+        FBAE3C
+    -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><img class="logoSize" src="./images/lynxlogo.png" alt=""></li>
+                <li id="home"><a href="">HOME</a></li>
+                <li id="about"><a href="#about-section">ABOUT</a></li>
+                <li id="contact"><a href="#contact-section">CONTACT</a></li>
+                
+                
+                
+                <div class="dropdown">
+                    <li id="langs">
+                        <a href="" class="dropdown-btn">
+                            <span id="language">LANGUAGE: </span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="Flag" style="width: 40px; height: 22.5px; margin-left: 5px; transform: translateY(3px); box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); border-radius: 5px;">
+                        </a>
+                    </li>
+                    <div class="dropdown-content">
+                        <a href="#" class="lang-link" data-lang="en">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="UK Flag" style="width: 40px; height: 22.5px; margin-left: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); border-radius: 5px;">
+                            English 
+                        </a>
+                        <a href="#" class="lang-link" data-lang="mk">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_North_Macedonia.svg/1200px-Flag_of_North_Macedonia.svg.png" alt="MK Flag" style="width: 40px; height: 22.5px; margin-left: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); border-radius: 5px;">
+                            Македонски
+                        </a>
+                
+                        <a href="#" class="lang-link" data-lang="al">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Albania.svg/1200px-Flag_of_Albania.svg.png" alt="AL Flag" style="width: 40px; height: 22.5px; margin-left: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); border-radius: 5px;">
+                            Shqip
+                        </a>
+                        <a href="#" class="lang-link" data-lang="fr">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/255px-Flag_of_France.svg.png" alt="FR Flag" style="width: 40px; height: 22.5px; margin-left: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); border-radius: 5px;">
+                            Français
+                        </a>
+                        <a href="#" class="lang-link" data-lang="es">
+                            <img src="https://cdn.britannica.com/36/4336-050-056AC114/Flag-Spain.jpg" alt="ES Flag" style="width: 40px; height: 22.5px; margin-left: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); border-radius: 5px;">
+                            Español
+                        </a>
+                        <a href="#" class="lang-link" data-lang="de">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1280px-Flag_of_Germany.svg.png" alt="DE Flag" style="width: 40px; height: 22.5px; margin-left: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); border-radius: 5px;">
+                            Deutsch
+                        </a>
+                        <a href="#" class="lang-link" data-lang="ch">
+                            <img src="https://cdn.britannica.com/90/7490-004-BAD4AA72/Flag-China.jpg" alt="CH Flag" style="width: 40px; height: 22.5px; margin-left: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); border-radius: 5px;">
+                            中国人
+                        </a>
+                        <a href="#" class="lang-link" data-lang="ar">
+                            <img src="https://cdn.britannica.com/79/5779-050-46C999AF/Flag-Saudi-Arabia.jpg" alt="SA Flag" style="width: 40px; height: 22.5px; margin-left: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); border-radius: 5px;">
+                            عربي
+                        </a>
+                        
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="main-section">
+            <div class="first-half">
+                <h1 id="quote"><span class="theme-color">Lynx</span>, explore landmarks <br>, landscapes and cities.<br>
+                <span></span></h1>
+
+            </div>
+            <div id="appear"></div>
+            <div class="second-half">
+                <map name="macedonia-map">
+                    <area shape="circle" coords="185,80,20" href="#" alt="Skopje" onclick="showCity(event, 'Skopje')">
+                    <area shape="circle" coords="135,160,20" href="#" alt="Tetovo" onclick="showCity(event, 'Tetovo')">
+                </map>
+                
+                <div style="position: absolute;">
+                    <img id="main-img" src="https://static.vecteezy.com/system/resources/previews/012/872/691/original/hand-drawn-of-north-macedonia-3d-map-png.png" alt="north macedonia map image" usemap="#macedonia-map" class="mapImage">
+                    <div id="highlighted-areas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+                     
+                    </div>
+
+                    <a target="_blank"  href="./cities/tetovo.html" onclick="showCity(event, 'Tetovo')" style="position: absolute; top: 70px; left: 370px;" class="location-link">
+                        <figure class="location-figure">
+                            <figcaption class="city-name">Tetovo</figcaption>
+                            <img class="location" src="./images/location.svg" alt="Location 3">
+                        </figure>
+                    </a>
+                    
+                    <a href="./cities/skopje.html" onclick="showCity(event, 'Skopje')" style="position: absolute; top: 78px; left: 448px;" class="location-link">
+                        <figure class="location-figure">
+                            <figcaption class="city-name">Skopje</figcaption>
+                            <img class="location" src="./images/location.svg" alt="Location 4">
+                        </figure>
+                    </a>
+                    <a href="./cities/gostivar.html" onclick="showCity(event, 'Gostivar')" style="position: absolute; top: 125px; left: 345px;" class="location-link">
+                        <figure class="location-figure">
+                            <figcaption class="city-name">Gostivar</figcaption>
+                            <img class="location" src="./images/location.svg" alt="Location 5">
+                        </figure>
+                    </a>
+                    <a href="./cities/kicevo.html" onclick="showCity(event, 'Kicevo')" style="position: absolute; top: 185px; left: 345px;" class="location-link">
+                        <figure class="location-figure">
+                            <figcaption class="city-name">Kicevo</figcaption>
+                            <img class="location" src="./images/location.svg" alt="Location 5">
+                        </figure>
+                    </a>
+                    <a href="./cities/veles.html" onclick="showCity(event, 'Veles')" style="position: absolute; top: 150px; left: 490px;" class="location-link">
+                        <figure class="location-figure">
+                            <figcaption class="city-name">Veles</figcaption>
+                            <img class="location" src="./images/location.svg" alt="Location 6">
+                        </figure>
+                    </a>
+                    <a href="./cities/struga.html" onclick="showCity(event, 'Struga')" style="position: absolute; top: 260px; left: 320px;" class="location-link">
+                        <figure class="location-figure">
+                            <figcaption class="city-name">Struga</figcaption>
+                            <img class="location" src="./images/location.svg" alt="Location 7">
+                        </figure>
+                    </a>
+                    <a href="./cities/ohrid.html" onclick="showCity(event, 'Ohrid')" style="position: absolute; top: 280px; left: 350px;" class="location-link">
+                        <figure class="location-figure">
+                            <figcaption class="city-name">Ohrid</figcaption>
+                            <img class="location" src="./images/location.svg" alt="Location 8">
+                        </figure>
+                    </a>
+                    <a href="./cities/kumanovo.html" onclick="showCity(event, 'Kumanovo')" style="position: absolute; top: 45px; left: 505px;" class="location-link">
+                        <figure class="location-figure">
+                            <figcaption class="city-name">Kumanovo</figcaption>
+                            <img class="location" src="./images/location.svg" alt="Location 9">
+                        </figure>
+                    </a>
+                    <a href="./cities/bitola.html" onclick="showCity(event, 'Bitola')" style="position: absolute; top: 305px; left: 425px;" class="location-link">
+                        <figure class="location-figure">
+                            <figcaption class="city-name">Bitola</figcaption>
+                            <img class="location" src="./images/location.svg" alt="Location 9">
+                        </figure>
+                    </a>
+                    <a href="./cities/prilep.html" onclick="showCity(event, 'Prilep')" style="position: absolute; top: 220px; left: 465px;" class="location-link">
+                        <figure class="location-figure">
+                            <figcaption class="city-name">Prilep</figcaption>
+                            <img class="location" src="./images/location.svg" alt="Location 11">
+                        </figure>
+                    </a>
+                    <a href="./cities/strumitsa.html" onclick="showCity(event, 'Strumitsa')" style="position: absolute; top: 195px; left: 650px;" class="location-link">
+                        <figure class="location-figure">
+                            <figcaption class="city-name">Strumitsa</figcaption>
+                            <img class="location" src="./images/location.svg" alt="Location 12">
+                        </figure>
+                    </a>
+                    <!-- Add more location pins as needed -->
+                </div>
+                
+        
+                <!-- Display the selected city -->
+                <!-- <p id="selected-city">Click on a city to <br> see its info here.</p> -->
+                    
+            </div>
+        </section>
+        <section class="grey-zone">
+
+        </section>
+    </main>
+    <section class="orange-bar">
+        <div class="push" >
+            <div class="card-1">
+                <h2 id="exploreLandmarks">Explore Landmarks</h2>
+
+                <hr>
+
+                <p id="para1">Explore landmarks through North Macedonia's 25,713km², learn about monestaries deep in the mountains or castles nestled in the middle of cities.</p>
+
+                <a  id="button1" class="card-button" href="#landmark">Discover!</a>
+
+                <img class="card-image" src="https://lh3.googleusercontent.com/p/AF1QipM5Qv0YOoTQ7afx7sVZoW9mpgTv2W2CJmzomVzi=s1360-w1360-h1020" alt="">
+            </div>
+            <div class="card-2">
+                <h2 id="exploreLandscapes">Explore Landscapes</h2>
+
+                <hr>
+
+                <p id="para2">Breeze through North Macedonia's wide variety of landscapes, through Mavrovo and the Polog Valley to the peaks of Korab and more.</p>
+
+                <a id="button2" class="card-button" href="#landscape">Discover!</a>
+
+
+                <img class="card-image" src="https://t3.ftcdn.net/jpg/06/44/01/58/360_F_644015841_0IO5Gx4Bj5N3Z6Y80C28H0nTHUoc0ydD.jpg" alt="">
+            </div>
+            <div class="card-3">
+
+                <h2 id="exploreCities">Discover Cities</h2>
+                
+
+                <hr>
+
+                <p id="para3">Discover Cities, from Skopje's baazar to Ohrid's St. John Church to Tetovo's Painted Mosque, North Macedonia has a diverse range of culture.</p>
+
+                <a id="button3" class="card-button" href="#city">Discover!</a>
+
+                <img class="card-image" src="https://c0.wallpaperflare.com/preview/204/244/40/ohrid-macedonia-fyrom-church-of-st-john-the-theologian-at-kaneo-before-the-rain.jpg" alt="">
+
+            </div>
+        </div>
+       
+        
+    </section>
+    <h1 class="lm"> <span id="landmarkTitle" style="color: #FBAE3C;">Landmarks</h1>
+    <section class="card-list" id="one">
+    
+
+        <article class="card" id="recent">
+            <header class="card-header">
+                <a href="https://www.nasdaq.com/articles/ukraine-legalizes-bitcoin">
+                    <h2 id="skopjeBaazar" class="space">Skopje Baazar</h2></a>
+                    <p id="skopjeBaazarParagraph">Located in the heart of Skopje, North Macedonia, the Skopje Bazaar is a vibrant cultural hub that pulsates with the energy of centuries-old traditions and modern commerce. Spanning a labyrinthine network of narrow alleys and bustling squares, this historic marketplace offers a sensory feast for visitors eager to immerse themselves in the sights, sounds, and flavors of Macedonian life.</p>
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/c5/d2/3d/img-20190602-101536-415.jpg?w=1200&h=1200&s=1"
+                target="_blank" style="margin-top: 50px;" alt="">
+            </header>
+            
+        </article>
+
+         <article class="card" id="recent">
+            <header class="card-header">
+                <a href="https://www.nasdaq.com/articles/ukraine-legalizes-bitcoin">
+                    <h2 id="bigorskiMonastery" class="space">Bigorski Monastery</h2></a>
+                    <p id="bigorskiMonasteryParagraph">Nestled in the picturesque village of Rostuša, Macedonia, the Bigorski Monastery stands as a testament to centuries of faith and architectural brilliance. Founded in the 11th century, its Byzantine-inspired design and serene surroundings draw visitors seeking solace and cultural enrichment.</p>
+                <img src="https://lh3.googleusercontent.com/p/AF1QipM5Qv0YOoTQ7afx7sVZoW9mpgTv2W2CJmzomVzi=s1360-w1360-h1020"
+                target="_blank" style="margin-top: 50px;" alt="">
+            </header>
+        </article>
+
+        <article class="card" id="recent">
+            <header class="card-header">
+                <a href="https://www.nasdaq.com/articles/ukraine-legalizes-bitcoin">
+                    <h2 id="churchOfSaintJohn" class="space">Church of Saint John</h2></a>
+                    <p id="churchOfSaintJohnParagraph">Nestled on the shores of the enchanting Lake Ohrid, the Church of Saint John stands as a timeless sanctuary of spirituality and architectural marvel. Dating back to the 13th century, this venerable church invites visitors to immerse themselves in centuries of faith and cultural richness in North Macedonia.</p>
+                <img src="https://c0.wallpaperflare.com/preview/204/244/40/ohrid-macedonia-fyrom-church-of-st-john-the-theologian-at-kaneo-before-the-rain.jpg"
+                target="_blank" style="margin-top: 50px;" alt="">
+            </header>
+            
+        </article>
+
+        <article class="card" id="recent">
+            <header class="card-header">
+                <a href="https://www.nasdaq.com/articles/ukraine-legalizes-bitcoin">
+                    <h2 id="paintedMosque" class="space">Painted Mosque</h2></a>
+                    <p id="paintedMosqueParagraph">Nestled in Tetovo, North Macedonia, the Painted Mosque, also known as the Colorful Mosque, is a stunning example of Islamic architecture. Its vibrant exterior, adorned with intricate floral motifs and geometric patterns, reflects the region's rich cultural heritage. Built in the 15th century, it stands as a symbol of tolerance and coexistence, inviting visitors to admire its beauty and explore its tranquil interior.</p>
+                <img src="https://i0.wp.com/sailingstonetravel.b-cdn.net/wp-content/uploads/2021/09/Painted-Mosque-Tetovo-67-copy.jpg?fit=1650%2C1074&ssl=1"
+                target="_blank" style="margin-top: 50px;" alt="">
+            </header>
+            
+        </article>
+
+        <article class="card" id="recent">
+            <header class="card-header">
+                <a href="https://www.nasdaq.com/articles/ukraine-legalizes-bitcoin">
+                    <h2 id="bayOfBones" class="space">The Bay of Bones</h2></a>
+                    <p id="bayOfBonesParagraph">Nestled on the picturesque shores of Lake Ohrid, the Bay of Bones Museum is a captivating archaeological site that transports visitors back in time, offering a vivid glimpse into Macedonia's ancient past through its meticulously reconstructed dwellings and fascinating artifacts dating back to the Bronze and Iron Ages.</p>
+                <img src="https://i.redd.it/obpj7q6pv6971.jpg"
+                target="_blank" style="margin-top: 50px;" alt="">
+            </header>
+            
+        </article>
+
+        
+    </section>
+
+    <section id="landscapes">
+        <div class="carousel">
+            <div class="carousel-cell">
+                <img src="https://t3.ftcdn.net/jpg/06/44/01/58/360_F_644015841_0IO5Gx4Bj5N3Z6Y80C28H0nTHUoc0ydD.jpg" alt="Image 1">
+                <div class="caption">
+                    <h2 id="mavrovoTitle">Mavrovo National Park</h2>
+                    <p id="mavrovoParagraph">Nestled in North Macedonia, Mavrovo National Park boasts stunning landscapes, diverse wildlife, and year-round activities like hiking and skiing, making it a perfect nature getaway.</p>
+                </div>
+            </div>
+
+            <div class="carousel-cell">
+                <img src="https://i0.wp.com/breatheintravel.com/wp-content/uploads/2018/06/Sans-titre-2-2.jpg?fit=2961%2C1970&ssl=1" alt="Image 2">
+                <div class="caption">
+                    <h2 id="ohridTitle">Lake Ohrid</h2>
+                    <p id="ohridParagraph">Lake Ohrid, shared by North Macedonia and Albania, is famed for its beauty and cultural sites like Ohrid's UNESCO-listed city. It's a top destination for history buffs and nature lovers alike.</p>
+                </div>
+            </div>
+            
+            <div class="carousel-cell">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Mount_Korab%2C_Republic_of_Macedonia.jpg/2560px-Mount_Korab%2C_Republic_of_Macedonia.jpg" alt="Image 2">
+                <div class="caption">
+                    <h2 id="korabTitle">Mt. Korab Peak</h2>
+                    <p id="korabParagraph">Mount Korab, towering at 2,764 meters, is the highest peak in both North Macedonia and Albania. Its rugged terrain and stunning views attract adventurers and nature lovers alike.</p>
+                </div>
+            </div>
+
+            <div class="carousel-cell">
+                <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTK-zMAiuN-z7Sm0DkmlnBTcBIZXoIsofKc7A6iTsiIYWUPH8_y6DBl-SRQA6B1eOugO4Jo5IECTWmjKisK2OU_Yog5OdA6hyxXPYlTqZQ" alt="Image 2">
+                <div class="caption">
+                    <h2 id="leshnicaTitle">Leshnica</h2>
+                    <p id="leshnicaParagraph">Nestled in North Macedonia, Lesnica is a picturesque village known for its natural beauty, traditional architecture, and warm hospitality, making it an ideal retreat for travelers seeking tranquility.</p>
+                </div>
+            </div>
+
+            <div class="carousel-cell">
+                <img src="https://justbooktheticket.travel/wp-content/uploads/2020/03/Matka-cave-North-Macedonia-15.jpg" alt="Image 2">
+                <div class="caption">
+                    <h2 id="matkaTitle">Matka Canyon</h2>
+                    <p  id="matkaParagraph">Matka Canyon offers stunning natural views and thrilling outdoor activities, making it a prime destination for adventurers seeking unforgettable experiences.</p>
+                </div>
+            </div>
+
+
+           
+        </div>
+
+    <br>
+        
+    <footer>
+        </section>
+        <section id="info" class="info">
+            <section class="info-card">
+                <div  style="display: block;">
+                    <div style="text-align: center;">
+                        <h2 id="about1">About Us</h2>
+                    </div>
+
+                    <p id="paragraph1">As an organization, we are deeply committed to sharing the enduring allure of traditional cities, highlighting their rich architectural diversity, and providing insightful recommendations for exploring the beautiful landscapes of Macedonia. Our mission is to captivate visitors with a mosaic of unforgettable destinations, ensuring they leave with cherished memories and a profound desire to return. By offering an enriching and immersive experience, we aim to deepen their appreciation for the natural beauty and cultural heritage of this remarkable region. Through our efforts, we hope to inspire a lasting connection between visitors and the historical charm of Macedonia, fostering a greater understanding and respect for its unique traditions and stunning environments.</p>
+                </div>
+            </section>
+
+        </section>
+        <div id="contact-section">
+            <div class="info-card" style="text-align: center;">
+
+                <div style="display: block;">
+                    <h2 id="contact1" >Contact</h2>
+                    <p id="address">HQ: Lower Pacific Heights, San Francisco, California, USA.</p>
+                    <p id="poBox">PO Box: Baker Street Apt. 15, 3rd Floor</p>
+                    <p id="email">Email: lynxapp@gmail.com</p>
+                    <p id="phoneNum">Phone Number: + 1 (415) 555-4421</p>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            document.getElementById('about').addEventListener('click', function(event) {
+                event.preventDefault(); 
+                window.scrollTo({
+                    top: 3320, 
+                    behavior: 'smooth' 
+                });
+            });
+            document.getElementById('contact').addEventListener('click', function(event) {
+                event.preventDefault(); 
+                window.scrollTo({
+                    top: 4000, 
+                    behavior: 'smooth' 
+                });
+            });
+        </script>
+
+    </footer>
+    <!-- <script>
+        // Function to show the selected city in the footer
+        function showCity(event, city) {
+            event.preventDefault(); // Prevent the default behavior of the <a> tag
+            document.getElementById('selected-city').textContent = city;
+        }
+    </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
+    <script>
+        var flkty = new Flickity('.carousel', {
+            cellAlign: 'center',
+            contain: true,
+            wrapAround: true,
+            pageDots: false,
+            autoPlay: 5000
+        });
+    </script>
+
+      
+    <script src="./script.js"></script>
+</body>
+</html>

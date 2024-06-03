@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lynx, Tetovo</title>
+    <link rel="stylesheet" href="./city.css">
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><img src="../images/lynxlogo.png" style="width: 75px;" alt=""></li>
+                <li id="home"><a href="../index.html">HOME</a></li>
+                <li id="about"><a href="">ABOUT</a></li>
+                <li id="contact"><a href="">CONTACT</a></li>
+                
+                <div style="float: right;" class="dropdown">
+                    <li id="langs">
+                        <a href="" class="dropdown-btn">
+                            <span id="language">LANGUAGE: </span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="Flag" style="width: 40px; height: 22.5px; margin-left: 5px; ">
+                        </a>
+                    </li>
+                    <div class="dropdown-content">
+                        <a href="#" class="lang-link" data-lang="en">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="UK Flag" style="width: 40px; height: 22.5px; margin-left: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                            English 
+                        </a>
+                        <!-- Add more languages with flags as needed -->
+                    </div>
+                </div>
+                
+            </ul>
+        </nav>
+    </header>
+    <main id="main-1">
+        <section class="section-1">
+            <h1>Ohrid</h1>
+            <p>Ohrid, in southwestern North Macedonia, is celebrated for its historical allure and natural splendor. As the "Pearl of the Balkans," it entices with its UNESCO-designated old town, ancient churches, and the tranquil Ohrid Lake. With a rich past dating back millennia, including landmarks like the Ohrid Fortress, the city's cobblestone streets offer a delightful blend of culture and scenic beauty, making it a top destination for history buffs and nature lovers alike.</p>
+        </section>
+        <section class="section-2"></section>
+    </main>
+    <section class="iframe-section">
+        <section class="section-1-iframe">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48095.04974438874!2d20.750683840319994!3d41.11398813108071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350db6587ea6657%3A0xc46cfc65390bc9d3!2sOhrid!5e0!3m2!1sen!2smk!4v1717341604110!5m2!1sen!2smk" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <section class="section-2-info">
+            <!-- Additional content can go here -->
+            <h1>Info</h1>
+            <h2>Population: 54,908</h2>
+            <h2>Altitude: 695 m</h2>
+            <h2>Ethnic Makeup: </h2>
+            <ul style="list-style: none;">
+                <li><img style="width: 40px; height: 25px; border-radius: 5px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_North_Macedonia.svg/2560px-Flag_of_North_Macedonia.svg.png" alt=""> Macedonian: 80.4%</li>
+                <li><img style="width: 40px; height: 25px; border-radius: 5px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Albania.svg/1200px-Flag_of_Albania.svg.png" alt=""> Albanian: 7%</li>
+                <li><img style="width: 40px; height: 25px; border-radius: 5px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/640px-Flag_of_Turkey.svg.png" alt=""> Turkish: 5.4%</li>
+
+            </ul>
+        </section>
+    </section>
+    <section class="flipped-bg"></section>
+    
+
+    <script>
+        window.onload = function() {
+            const images = [
+                'https://2cupsoftravel.com/wp-content/uploads/2022/08/Lake-ohrid-nth-macedonia-recommendations.jpg',
+                'https://i0.wp.com/mytravelation.com/wp-content/uploads/2023/12/Ohrid-Macedonia.jpg',
+                'https://cdn.britannica.com/99/115499-050-C9025B4C/Lake-Ohrid-border-North-Macedonia-Albania.jpg'
+            ];
+            let currentImageIndex = 0;
+            const section2 = document.querySelector('.section-2');
+
+            function changeImage() {
+                section2.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            }
+
+            changeImage(); // Initial call
+            setInterval(changeImage, 5000); // Change image every 3 seconds
+        }
+    </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
+    <script>
+        var flkty = new Flickity('.carousel', {
+            cellAlign: 'center',
+            contain: true,
+            wrapAround: true,
+            pageDots: false,
+            autoPlay: 5000 
+        });
+    </script> -->
+
+    
+    <!-- <script src="../script.js"></script> -->
+</body>
+</html>
